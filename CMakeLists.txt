@@ -5,6 +5,7 @@ project( 3D-reconstrcution )
 
 add_subdirectory (monocular_camera_calibration)
 add_subdirectory (common)
+add_subdirectory (mytest)
 
 
 

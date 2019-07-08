@@ -163,7 +163,6 @@ int main(int argc, char *argv[]) {
 
 
   /* 8.undistort images */
-  // 
   cv::Mat new_camera_intrinsic_matrix = 
   cv::getOptimalNewCameraMatrix (
       intrinsic_matrix,         // intrinsic matrix
@@ -188,7 +187,7 @@ int main(int argc, char *argv[]) {
                                 // elements of map1
       );
 
-  // Just run the camera to the screen, now showing the raw and
+  // remap and show image
   int index = 0;
   for (auto image:images) {
     cv::Mat image_undistort;
