@@ -11,20 +11,11 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <chrono>
+#include "misc.h"
 
 using namespace std;
 
-void readImagesWithPattern(cv::String pattern, vector<cv::Mat> &images)
-{
-    vector<cv::String> fn;
-    glob(pattern, fn, false);
-
-    for (const auto filename:fn) {
-        images.push_back(cv::imread(filename));
-    }
-}
-
-void help() { 
+static void help() { 
 	cout 	<< "\n<Usage>"
 			<< "\n>> ./example 'data/*.jpg' "
 			<< "\n>> ./example 'data/*.jpg' 9 6 1.0 \n"
@@ -62,9 +53,10 @@ int main(int argc, char *argv[]) {
   int board_n = board_w * board_h;
   cv::Size board_sz = cv::Size(board_w, board_h);
 
+
   /* 2. get images from path */
   vector<cv::Mat> images;
-  readImagesWithPattern(pattern, images);
+  misc::readImagesWithPattern(pattern, images);
 
 
   /* 3. find corners, get image points and world points of object */
