@@ -17,11 +17,11 @@ using namespace std;
 
 static void help() { 
 	cout 	<< "\n<Usage>"
-			<< "\n>> ./example 'data/*.jpg' "
-			<< "\n>> ./example 'data/*.jpg' 9 6 1.0 \n"
+			<< "\n>> ./example 'data/*.jpg' 9 6 1.0 (default)\n"
+			<< "\n>> ./example 'data/*.jpg' 9 6 1.0\n"
             << "\n argv[1]: image folder or pattern"
             << "\n argv[2]: corners width"
-            << "\n argv[3]: corners length"
+            << "\n argv[3]: corners heigt"
             << "\n argv[4]: ratio of image resizing"
 			<< "\n" 
 			<< endl;
@@ -33,13 +33,11 @@ int main(int argc, char *argv[]) {
   // the maximum number of corners inside the checkerboard,
   // all images can be fully detected. And it needn't resize.
   int board_w = 9;      //chessboard corner width needed to detect
-  int board_h = 6;      //chessboard corner length needed to detect
+  int board_h = 6;      //chessboard corner heigt needed to detect
   float image_sf = 1.0; //use to resize the image 0.0-1.0 
-  cv::String pattern = "monocular_camera_calibration/data/left*.jpg";
+  const char* pattern = "monocular_camera_calibration/data/*.jpg";
                         // image folder or pattern
   if (argc == 1) {
-  } else if (argc == 2) {
-      pattern = argv[1];
   } else if (argc == 5) {
       pattern = argv[1];
       board_w = atoi(argv[2]);
@@ -83,7 +81,7 @@ int main(int argc, char *argv[]) {
       }
   }
 
-  cout << "accept images: " << image_points.size() 
+  std::cout << "accept images: " << image_points.size() 
        << " / " << images.size() << endl;
 
 
