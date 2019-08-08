@@ -5,7 +5,7 @@
 #include <libgen.h>
 #include "debug.h"
 
-namespace debug {
+namespace mdebug {
 
 #define ANSI_COLOR_RED                  "\x1b[1;31m" 
 #define ANSI_COLOR_GREEN                "\x1b[1;32m"

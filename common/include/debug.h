@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-namespace debug {
+namespace mdebug {
 
 int common_printf(FILE * fp, const int level, const char * file,
                          const int line, const char * func, const char * fmt, ...);

@@ -10,4 +10,4 @@ include_directories("${PROJECT_SOURCE_DIR}/../common/include")
 add_executable( binocular_camera_calibration binocular_camera_calibration.cpp )
 
 # FIRST LINK EXAMPLES:
-target_link_libraries( binocular_camera_calibration ${OpenCV_LIBS} misc)
+target_link_libraries( binocular_camera_calibration ${OpenCV_LIBS} common)

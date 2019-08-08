@@ -13,6 +13,6 @@ add_executable( double_camera_multiple_proccess_pipe double_camera_multiple_proc
 add_executable( multiple_camera_using_thread multiple_camera_using_thread.cpp )
 
 # FIRST LINK EXAMPLES:
-target_link_libraries( double_camera_multiple_proccess_pipe ${OpenCV_LIBS} misc mdebug)
-target_link_libraries( multiple_camera_using_thread ${OpenCV_LIBS} misc mdebug)
+target_link_libraries( double_camera_multiple_proccess_pipe ${OpenCV_LIBS} common)
+target_link_libraries( multiple_camera_using_thread ${OpenCV_LIBS} common)
 

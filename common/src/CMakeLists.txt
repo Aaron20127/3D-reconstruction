@@ -6,6 +6,13 @@ find_package( OpenCV REQUIRED )
 # ${PROJECT_SOURCE_DIR} represents the current directory of CmakeLists.txt
 include_directories("${PROJECT_SOURCE_DIR}/../include")
 
-add_library(misc SHARED misc.cpp)
-add_library(mdebug SHARED debug.cpp)
+
+add_library(
+    common SHARED 
+    misc.cpp
+    imageUndistort.cpp
+    imageUndistort.cpp
+    camera.cpp debug.cpp
+)
+
 
