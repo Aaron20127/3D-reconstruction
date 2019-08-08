@@ -10,9 +10,9 @@ include_directories("${PROJECT_SOURCE_DIR}/../common/include")
 
 # COMPILE EXAMPLES
 add_executable( double_camera_multiple_proccess_pipe double_camera_multiple_proccess_pipe.cpp )
-add_executable( double_camera_multiple_thread double_camera_multiple_thread.cpp )
+add_executable( multiple_camera_using_thread multiple_camera_using_thread.cpp )
 
 # FIRST LINK EXAMPLES:
-target_link_libraries( double_camera_multiple_proccess_pipe ${OpenCV_LIBS})
-target_link_libraries( double_camera_multiple_thread ${OpenCV_LIBS})
+target_link_libraries( double_camera_multiple_proccess_pipe ${OpenCV_LIBS} misc mdebug)
+target_link_libraries( multiple_camera_using_thread ${OpenCV_LIBS} misc mdebug)
 
